@@ -10,6 +10,7 @@ def user_directory_path(instance,filename):
 class User(AbstractUser):
     uid = models.UUIDField(default=uuid4,primary_key=True,editable=False)
     face_image = models.FileField(upload_to=user_directory_path)
+    img = models.TextField(default='')
 
     def __str__(self):
         return self.username

@@ -27,6 +27,7 @@
     // Grab elements, create settings, etc.
     var video = document.getElementById('video');
     var localstream;
+    var imgData;
   function onCamera(){
     // Get access to the camera!
     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -72,10 +73,17 @@ var video = document.getElementById('video');
 // Trigger photo take
 document.getElementById("snap").addEventListener("click", function() {
 context.drawImage(video, 0, 0, 640, 480);
-var data = canvas.toDataURL('image/jpeg');
-console.log(data);
+imgData = canvas.toDataURL('image/jpeg');
 });
 
+
+$("#userForm").submit( function(eventObj) {
+      $("<input />").attr("type", "hidden")
+          .attr("name", "img")
+          .attr("value", imgData)
+          .appendTo("#userForm");
+      return true;
+});
 </script>
 </body>
 </html>
