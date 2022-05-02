@@ -5,13 +5,13 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<title>Listings</title>
+<title>Face-Auth</title>
 </head>
 <body>
   <div  class="container">
     <div  class="row justify-content-center">
       <div  class="col-4">
-      <h1  class="text-center">Listings</h1>
+      <h1  class="text-center">Face-Auth</h1>
       {% block content %}
 
       {% endblock %}
@@ -72,7 +72,7 @@ var video = document.getElementById('video');
 
 // Trigger photo take
 document.getElementById("snap").addEventListener("click", function() {
-context.drawImage(video, 0, 0, 640, 480);
+context.drawImage(video, 0, 0,canvas.width, canvas.height);
 imgData = canvas.toDataURL('image/jpeg');
 });
 

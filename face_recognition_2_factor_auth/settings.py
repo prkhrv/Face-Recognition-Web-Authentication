@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'face_auth'
+    # 'django_two_factor_face_auth',
+    
 ]
 
 MIDDLEWARE = [
