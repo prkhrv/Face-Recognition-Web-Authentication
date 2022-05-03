@@ -13,8 +13,13 @@ from django.contrib.auth import authenticate,login,logout
 # Create your views here.
 
 def logout_user(request):
-    logout(request)
+    if request.user.is_authenticated:
+        user = User.objects.get(uid=request.user.uid)
+        user.face_auth = False
+        user.save()
+        logout(request)
     return redirect('/')
+
 
 def home(request):
     return render(request,'index.html')
