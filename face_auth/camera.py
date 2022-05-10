@@ -17,11 +17,24 @@ face_names = []
 process_this_frame = True
 
 def welcome(request,user):
+    """
+    It takes a request and a user, and sets the user's face_auth to True
+    
+    :param request: The request object
+    :param user: The user object that was authenticated
+    """
     user.face_auth = True
     user.save()
 
 
 def gen_frames(request,user):
+    """
+    It takes a request and a user object, and returns a generator that yields a series of frames from
+    the webcam
+    
+    :param request: The request object
+    :param user: The user object
+    """
     camera = cv2.VideoCapture(0)
     camera.set(cv2.CAP_PROP_BUFFERSIZE, 2)
 
